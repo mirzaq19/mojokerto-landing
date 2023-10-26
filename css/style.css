@@ -54,8 +54,8 @@ header nav ul li .nav-link {
   transition: all 0.3s ease-in-out;
 }
 
-header nav ul li .nav-link.contrast {
-  color: #000;
+.contrast {
+  color: #000 !important;
 }
 
 header nav ul li .nav-link::after {
@@ -73,6 +73,52 @@ header nav ul li .nav-link:hover::after {
 
 header nav ul li .nav-link.contrast::after {
   background-color: #000;
+}
+
+#burger-button {
+  position: absolute;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  inset-block-start: calc(1rem + 4px);
+  inset-inline-start: 2rem;
+  display: none;
+  padding: 18px 0;
+}
+
+#burger-button .burger {
+  margin: auto;
+  width: 28px;
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.2s ease-in-out;
+}
+#burger-button .burger::before,
+#burger-button .burger::after {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.2s ease-in-out;
+}
+#burger-button .burger::before {
+  transform: translateY(-10px);
+}
+#burger-button .burger::after {
+  transform: translateY(10px);
+}
+#burger-button.active .burger {
+  transform: translateX(-20px);
+  background: transparent;
+}
+#burger-button.active .burger::before {
+  transform: rotate(45deg) translate(14px, -14px);
+}
+#burger-button.active .burger::after {
+  transform: rotate(-45deg) translate(14px, 14px);
 }
 
 #content > article {
@@ -282,16 +328,41 @@ footer a:hover {
   }
   header .header-container {
     flex-direction: column;
+    padding-bottom: 0;
+    height: 80px;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
   }
+
+  header .header-container.active {
+    height: fit-content;
+  }
+
   header .header-container .logo img {
     width: 120px;
   }
   header .header-container nav {
     padding-block: 0.4rem;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+  }
+  header .header-container nav.active {
+    opacity: 1;
   }
   header .header-container nav ul {
     justify-content: center;
-    flex-wrap: wrap;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  header .header-container nav ul li {
+    border-bottom: solid 2px #ffffff23;
+    margin-bottom: 0.4rem;
+  }
+
+  #burger-button {
+    display: block;
   }
 
   #intro .article-container h1 {

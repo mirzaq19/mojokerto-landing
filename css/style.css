@@ -274,6 +274,9 @@ footer a:hover {
 }
 
 @media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
   header {
     background-color: #61616134;
   }
@@ -289,7 +292,7 @@ footer a:hover {
   }
 
   #intro .article-container h1 {
-    font-size: 2.5rem !important;
+    font-size: 2.2rem !important;
   }
 
   .intro-text {

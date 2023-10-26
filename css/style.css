@@ -283,8 +283,11 @@ footer a:hover {
   header .header-container {
     flex-direction: column;
   }
+  header .header-container .logo img {
+    width: 120px;
+  }
   header .header-container nav {
-    padding-block: 1rem;
+    padding-block: 0.4rem;
   }
   header .header-container nav ul {
     justify-content: center;

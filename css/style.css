@@ -247,7 +247,8 @@ aside > article#author .author-content {
   display: flex;
   flex-direction: column;
   max-width: 22rem;
-  background-color: #dddddd;
+  background-color: #dddddd9a;
+  backdrop-filter: blur(30px);
   padding: 1.5rem;
   row-gap: 1rem;
   border-bottom-left-radius: 1rem;
